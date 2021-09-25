@@ -18,7 +18,7 @@ int main(void)
         printf("Mode: ELECTRONIC CODEBOOK\n");
         executeAesEcb(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
     } else {
-        printf("Mode: CIPHER BLOCKER CHAINING");
+        printf("Mode: CIPHER BLOCKER CHAINING\n");
         executeAesCbc(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
     }
     printf("Benchmark done!\n");
