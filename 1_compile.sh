@@ -1,5 +1,5 @@
-#for testing purposes use iotlab-m3
-for BOARD in iotlab-a8-m3 iotlab-m3 arduino-zero dwm1001 firefly frdm-kw41z microbit nrf51dk nrf52832-mdk nrf52840-mdk nrf52840dk nrf52dk nucleo-f070rb nucleo-wl55jc samd21-xpro samr21-xpro samr30-xpro samr34-xpro zigduino; do
+#for testing purposes use iotlab-m3 as BOARD
+for BOARD in arduino-zero; do 
     for ROUNDS in 1000; do
         for MESSAGE_LENGTH in 128 256 512 1024; do
             for AUTH_DATA_LENGTH in 16 32 64 128; do
