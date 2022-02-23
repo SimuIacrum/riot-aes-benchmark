@@ -29,5 +29,7 @@ int main(void)
             break;
     }
     printf("Benchmark done!\n");
+    printf(";;;;ROUNDS;MESSAGE_LENGTH;AUTH_DATA_LENGTH;KEY_SIZE;BENCHMODE\n");
+    printf(";;;;%d;%d;%d;%d;%d\n", ROUNDS,MESSAGE_LENGTH,AUTH_DATA_LENGTH,KEY_SIZE,BENCHMODE);
     return 0;
 }
