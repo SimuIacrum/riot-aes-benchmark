@@ -1,5 +1,5 @@
 #Name of the application
-APPLICATION = CRYPTBENCH
+APPLICATION ?= CRYPTBENCH
 
 #Which default board to use. The "?" allows to override this value
 BOARD ?= native
@@ -14,6 +14,7 @@ BIN_USEMODULE += $(APPLICATION_MODULE)
 DIST_FILES += Makefile
 
 AES_KEY_SIZE ?= 128 # Defines which key size is to be used. Can be overriden in the make command
+
 
 USEMODULE += shell_commands # RIOT SHELL COMMANDS
 USEMODULE += shell 			    # RIOT SHELL MODULE
