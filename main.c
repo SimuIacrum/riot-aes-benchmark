@@ -1,25 +1,32 @@
 #include "algorithms/aes-ecb.h"
 #include "algorithms/aes-cbc.h"
+#include "algorithms/aes-ctr.h"
+#include "algorithms/aes-ocb.h"
+#include "algorithms/aes-ccm.h"
 #include <stdio.h>
 #include <stdint.h>
 #include "time.h"
 #include "string.h"
 
-
-#define ROUNDS 1000
-#define MESSAGE_LENGTH 2048 // in BYTES
-#define KEY_SIZE 24 // in BYTES
-#define ECB_MODE 0 // 0=OFF, 1=ON
-
 int main(void)
 {
-    printf("Starting Benchmark ...\nNUMBER OF ROUNDS: %d\nWORDLENGTH: %d BYTES\n", ROUNDS, MESSAGE_LENGTH);
-    if(ECB_MODE){
-        printf("Mode: ELECTRONIC CODEBOOK\n");
-        executeAesEcb(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
-    } else {
-        printf("Mode: CIPHER BLOCKER CHAINING\n");
-        executeAesCbc(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
+    printf("Starting Benchmark ...\n");
+    switch(BENCHMODE) {
+        case 0:
+            executeAesEcb(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
+            break;
+        case 1:
+            executeAesCbc(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
+            break;
+        case 2:
+            executeAesCtr(ROUNDS, KEY_SIZE, MESSAGE_LENGTH);
+            break;
+        case 3:
+            executeAesOcb(ROUNDS, KEY_SIZE, MESSAGE_LENGTH, AUTH_DATA_LENGTH);
+            break;
+        case 4:
+            executeAesCcm(ROUNDS, KEY_SIZE, MESSAGE_LENGTH, AUTH_DATA_LENGTH);
+            break;
     }
     printf("Benchmark done!\n");
     return 0;
