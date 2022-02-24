@@ -35,7 +35,7 @@ for MESSAGE_LENGTH in 128 256 512 1024; do
         id=$(eval "iotlab experiment submit -d $duration " $nodes | grep -P '\d{6}' -o)
         echo $id
         #serial_aggregator only works on running experiments
-        iotlab-experiment wait
+        iotlab-experiment wait -i $id
         echo "$id is Running"
         #just making sure
         sleep 2
