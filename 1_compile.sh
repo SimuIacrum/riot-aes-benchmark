@@ -1,4 +1,4 @@
-BOARDS_ALL=("iotlab-a8-m3", "iotlab-m3", "arduino-zero", "dwm1001", "firefly", "frdm-kw41z", "microbit", "nrf51dk", "nrf52832-mdk", "nrf52840-mdk", "nrf52840dk", "nrf52dk", "nucleo-f070rb", "nucleo-wl55jc", "samd21-xpro", "samr21-xpro", "samr30-xpro", "samr34-xpro", "zigduino")
+BOARDS_ALL=("iotlab-m3", "iotlab-a8-m3", "arduino-zero", "dwm1001", "firefly", "frdm-kw41z", "microbit", "nrf51dk", "nrf52832-mdk", "nrf52840-mdk", "nrf52840dk", "nrf52dk", "nucleo-f070rb", "nucleo-wl55jc", "samd21-xpro", "samr21-xpro", "samr30-xpro", "samr34-xpro", "zigduino")
 BOARD_SINGLE="iotlab-m3"                #for testing purposes replace with BOARDS_ALL
 ROUNDS=(1000)
 MESSAGE_LENGTHS=(128 256 512 1024)      #in bytes
