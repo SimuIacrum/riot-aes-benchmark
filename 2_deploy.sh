@@ -48,6 +48,7 @@ for BOARD in ${BOARDS_ALL[@]}; do
                         #just making sure
                         sleep 2
                         #usually the nodes start directly after the experiment is running. But serial_aggregator can't keep up so we have to reset them manually
+                        #so far, the parameters --stop and --start only work with iotlab-m3. With arduino-zero and samr21 use --reset instead.
                         iotlab-node -i $id --stop
                         #aggregate node output into a file
                         #see also https://iot-lab.github.io/docs/tools/serial-aggregator/
